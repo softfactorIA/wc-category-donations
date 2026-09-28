@@ -312,11 +312,6 @@ msgid "WooCommerce Category Donations: no category found. Add a category attribu
 msgstr "WooCommerce Category Donations: non se atopou ningunha categoría. Engade un atributo de categoría ou usa este shortcode nunha páxina de categoría de produto ou de produto."
 
 #: block-donations/block.json
-msgctxt "block title"
-msgid "Donations"
-msgstr "Doazóns"
-
-#: block-donations/block.json
 msgctxt "block description"
 msgid "Demo/diagnostic block showing the donation information relevant to the current page context (any page, category, product or cart), plus the full donation summary."
 msgstr "Bloque de demostración/diagnóstico que mostra a información de doazóns relevante para o contexto actual da páxina (calquera páxina, categoría, produto ou carriño), ademais do resumo completo de doazóns."
@@ -344,3 +339,55 @@ msgstr "Data"
 #: wc-category-donations.php
 msgid "WooCommerce Category Donations requires WooCommerce to be installed and active. The plugin is not running."
 msgstr "WooCommerce Category Donations require que WooCommerce estea instalado e activo. O plugin non está en funcionamento."
+
+#: includes/class-wc-category-donations-admin.php
+msgid "About"
+msgstr "Acerca de"
+
+#: includes/class-wc-category-donations-admin.php
+msgid "Source code:"
+msgstr "Código fonte:"
+
+#: includes/class-wc-category-donations-admin.php
+msgid "WooCommerce Category Donations adds a donation percentage and a cause to each product category. The donation amount is calculated on the product price before taxes, recorded with the order, and adjusted automatically when orders are refunded or cancelled."
+msgstr "WooCommerce Category Donations engade unha porcentaxe de doazón e unha causa a cada categoría de produto. O importe da doazón calcúlase sobre o prezo do produto antes de impostos, rexístrase co pedido e axústase automaticamente cando os pedidos se reembolsan ou cancelan."
+
+#: includes/class-wc-category-donations-admin.php
+msgid "The Donations tab shows the recorded totals (per category, per year and overall), the list of cancelled donations, and lets you download an annual CSV report. The customer donations summary appears on the user edit screen, and the Settings tab controls the default percentage and the donation message."
+msgstr "A pestana Doazóns amosa os totais rexistrados (por categoría, por ano e global), a lista de doazóns canceladas e permite descargar un informe anual en CSV. O resumo de doazóns do cliente aparece na pantalla de edición de usuario, e a pestana Axustes controla a porcentaxe por defecto e a mensaxe de doazón."
+
+#: includes/class-wc-category-donations-admin.php
+msgid "Shortcodes and public functions let themes display donation information anywhere."
+msgstr "Os shortcodes e funcións públicas permiten amosar información das doazóns en calquera parte do tema."
+
+#: includes/class-wc-category-donations-admin.php
+msgid "See the shortcodes tab."
+msgstr "Ver a pestana de shortcodes."
+
+#: includes/class-wc-category-donations-admin.php
+msgid "License:"
+msgstr "Licencia:"
+
+#: includes/class-wc-category-donations-admin.php
+msgid "Authors:"
+msgstr "Autores:"
+
+#: includes/class-wc-category-donations-admin.php
+msgid "Support"
+msgstr "Soporte"
+
+#: includes/class-wc-category-donations-admin.php
+msgid "Community (free):"
+msgstr "Comunidade (de balde):"
+
+#: includes/class-wc-category-donations-admin.php
+msgid "GitHub issue tracker"
+msgstr "Seguimento de incidencias de GitHub"
+
+#: includes/class-wc-category-donations-admin.php
+msgid "Professional (paid):"
+msgstr "Profesional (de pago):"
+
+#: includes/class-wc-category-donations-admin.php
+msgid "Github"
+msgstr "Github"

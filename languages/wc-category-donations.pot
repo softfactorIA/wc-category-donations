@@ -339,11 +339,6 @@ msgid "WooCommerce Category Donations: no category found. Add a category attribu
 msgstr ""
 
 #: block-donations/block.json
-msgctxt "block title"
-msgid "Donations"
-msgstr ""
-
-#: block-donations/block.json
 msgctxt "block description"
 msgid "Demo/diagnostic block showing the donation information relevant to the current page context (any page, category, product or cart), plus the full donation summary."
 msgstr ""
@@ -351,3 +346,42 @@ msgstr ""
 #: wc-category-donations.php
 msgid "WooCommerce Category Donations requires WooCommerce to be installed and active. The plugin is not running."
 msgstr ""
+
+#: includes/class-wc-category-donations-admin.php
+msgid "About"
+
+#: includes/class-wc-category-donations-admin.php
+msgid "Source code:"
+
+#: includes/class-wc-category-donations-admin.php
+msgid "WooCommerce Category Donations adds a donation percentage and a cause to each product category. The donation amount is calculated on the product price before taxes, recorded with the order, and adjusted automatically when orders are refunded or cancelled."
+
+#: includes/class-wc-category-donations-admin.php
+msgid "The Donations tab shows the recorded totals (per category, per year and overall), the list of cancelled donations, and lets you download an annual CSV report. The customer donations summary appears on the user edit screen, and the Settings tab controls the default percentage and the donation message."
+
+#: includes/class-wc-category-donations-admin.php
+msgid "Shortcodes and public functions let themes display donation information anywhere."
+
+#: includes/class-wc-category-donations-admin.php
+msgid "See the shortcodes tab."
+
+#: includes/class-wc-category-donations-admin.php
+msgid "License:"
+
+#: includes/class-wc-category-donations-admin.php
+msgid "Authors:"
+
+#: includes/class-wc-category-donations-admin.php
+msgid "Support"
+
+#: includes/class-wc-category-donations-admin.php
+msgid "Community (free):"
+
+#: includes/class-wc-category-donations-admin.php
+msgid "GitHub issue tracker"
+
+#: includes/class-wc-category-donations-admin.php
+msgid "Professional (paid):"
+
+#: includes/class-wc-category-donations-admin.php
+msgid "Github"

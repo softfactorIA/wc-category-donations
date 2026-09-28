@@ -16,6 +16,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   `Donations::get_customer_donation_total()` aggregation and the public
   `wccd_get_user_donation_total()` function; the admin customer summary
   reuses the same aggregation.
+- New "About" tab on the admin page with a brief description of the
+  plugin, links to the source repository and license, and a Support
+  section (free community support via the GitHub issue tracker, paid
+  professional support via fernandocoello.com).
+
+### Changed
+
+- The plugin row on the Plugins screen now links to the source
+  repository instead of the plugin site: the meta reads "Settings"
+  (second entry, pointing to the plugin admin page) and "Github"
+  (pointing to https://github.com/softfactorIA/wc-category-donations).
+  The "By <author>" entry is no longer shown on the plugin row (authors
+  remain in the plugin header, readme and the About tab). The `Plugin
+  URI` header was updated accordingly.
 
 ## [1.1.0] - 2026-09-27
 

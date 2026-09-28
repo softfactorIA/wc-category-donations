@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WooCommerce Category Donations
- * Plugin URI:  https://example.local/wc-category-donations
+ * Plugin URI:  https://github.com/softfactorIA/wc-category-donations
  * Description: WooCommerce companion plugin with per-category donation settings and shortcodes.
  * Version:     1.1.0
  * Author:      F.Coello (satoko) & R.Couto (caligari)

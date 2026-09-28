@@ -32,6 +32,7 @@ class Admin {
 		add_action( 'admin_init', array( $this, 'maybe_cancel_order_donations' ) );
 		add_action( 'admin_post_wccd_export_donations', array( $this, 'export_donations_csv' ) );
 		add_action( 'edit_user_profile', array( $this, 'render_user_donations_section' ) );
+		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta_source_link' ), 10, 3 );
 	}
 
 	/**
@@ -342,7 +343,7 @@ class Admin {
 	}
 
 	/**
-	 * Render the plugin admin page: Settings and Donations tabs.
+	 * Render the plugin admin page: Donations, Settings, Shortcodes and About tabs.
 	 */
 	public function render_page(): void {
 		if ( ! current_user_can( 'manage_options' ) ) {
@@ -354,6 +355,7 @@ class Admin {
 			'donations'  => __( 'Donations', 'wc-category-donations' ),
 			'settings'   => __( 'Settings', 'wc-category-donations' ),
 			'shortcodes' => __( 'Shortcodes', 'wc-category-donations' ),
+			'about'      => __( 'About', 'wc-category-donations' ),
 		);
 		?>
 		<div class="wrap">
@@ -371,11 +373,112 @@ class Admin {
 				$this->render_donations_tab();
 			} elseif ( 'shortcodes' === $tab ) {
 				$this->render_shortcodes_tab();
+			} elseif ( 'about' === $tab ) {
+				$this->render_about_tab();
 			} else {
 				$this->render_settings_tab();
 			}
 			?>
 		</div>
+		<?php
+	}
+
+	/**
+	 * Adjust the plugin row meta on the Plugins screen.
+	 *
+	 * Drops the "By <author>" entry, replaces the native "Visit plugin
+	 * site"/"View details" link (WordPress always labels the Plugin URI
+	 * link that way; there is no header to change the label) with a
+	 * "Github" link to the public repository, and appends a "Settings"
+	 * link to the plugin admin page as the second entry.
+	 *
+	 * @param array  $plugin_meta An array of the plugin's metadata links.
+	 * @param string $plugin_file Path to the plugin file relative to the plugins directory.
+	 * @param array  $plugin_data An array of plugin data.
+	 * @return array
+	 */
+	public function plugin_row_meta_source_link( array $plugin_meta, string $plugin_file, array $plugin_data ): array {
+		if ( plugin_basename( WCCD_PLUGIN_FILE ) !== $plugin_file ) {
+			return $plugin_meta;
+		}
+
+		$source_url = 'https://github.com/softfactorIA/wc-category-donations';
+		$by_prefix  = trim( sprintf( __( 'By %s', 'default' ), '' ) );
+		$filtered   = array();
+
+		foreach ( $plugin_meta as $meta ) {
+			if ( ! is_string( $meta ) ) {
+				continue;
+			}
+
+			// Drop the native Plugin URI link and the "By <author>" entry.
+			if ( false !== strpos( $meta, (string) $plugin_data['PluginURI'] ) ) {
+				continue;
+			}
+
+			if ( '' !== $by_prefix && 0 === strpos( $meta, $by_prefix ) ) {
+				continue;
+			}
+
+			$filtered[] = $meta;
+		}
+
+		$filtered[] = sprintf(
+			'<a href="%s">%s</a>',
+			esc_url( admin_url( 'admin.php?page=wccd-settings' ) ),
+			esc_html__( 'Settings', 'wc-category-donations' )
+		);
+
+		$filtered[] = sprintf(
+			'<a href="%s" target="_blank" rel="noopener">%s</a>',
+			esc_url( $source_url ),
+			esc_html__( 'Github', 'wc-category-donations' )
+		);
+
+		return $filtered;
+	}
+
+	/**
+	 * Render the About tab: a brief description of the plugin.
+	 */
+	private function render_about_tab(): void {
+		?>
+		<h2><?php esc_html_e( 'About', 'wc-category-donations' ); ?></h2>
+		<p>
+			<?php esc_html_e( 'WooCommerce Category Donations adds a donation percentage and a cause to each product category. The donation amount is calculated on the product price before taxes, recorded with the order, and adjusted automatically when orders are refunded or cancelled.', 'wc-category-donations' ); ?>
+		</p>
+		<p>
+			<?php esc_html_e( 'The Donations tab shows the recorded totals (per category, per year and overall), the list of cancelled donations, and lets you download an annual CSV report. The customer donations summary appears on the user edit screen, and the Settings tab controls the default percentage and the donation message.', 'wc-category-donations' ); ?>
+		</p>
+		<p>
+			<?php esc_html_e( 'Shortcodes and public functions let themes display donation information anywhere.', 'wc-category-donations' ); ?>
+			<a href="<?php echo esc_url( add_query_arg( 'tab', 'shortcodes' ) ); ?>"><?php esc_html_e( 'See the shortcodes tab.', 'wc-category-donations' ); ?></a>
+		</p>
+		<ul>
+			<li>
+				<?php esc_html_e( 'Source code:', 'wc-category-donations' ); ?>
+				<a href="https://github.com/softfactorIA/wc-category-donations" target="_blank" rel="noopener">https://github.com/softfactorIA/wc-category-donations</a>
+			</li>
+			<li>
+				<?php esc_html_e( 'License:', 'wc-category-donations' ); ?>
+				GPL-2.0-or-later
+			</li>
+			<li>
+				<?php esc_html_e( 'Authors:', 'wc-category-donations' ); ?>
+				F.Coello (satoko) &amp; R.Couto (caligari)
+			</li>
+		</ul>
+		<h2><?php esc_html_e( 'Support', 'wc-category-donations' ); ?></h2>
+		<ul>
+			<li>
+				<?php esc_html_e( 'Community (free):', 'wc-category-donations' ); ?>
+				<a href="https://github.com/softfactorIA/wc-category-donations/issues" target="_blank" rel="noopener"><?php esc_html_e( 'GitHub issue tracker', 'wc-category-donations' ); ?></a>
+			</li>
+			<li>
+				<?php esc_html_e( 'Professional (paid):', 'wc-category-donations' ); ?>
+				<a href="https://fernandocoello.com/contacto/" target="_blank" rel="noopener">fernandocoello.com/contacto</a>
+			</li>
+		</ul>
 		<?php
 	}
 
