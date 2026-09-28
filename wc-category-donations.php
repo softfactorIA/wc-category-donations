@@ -130,6 +130,34 @@ function wccd_get_donations_total(): float {
 }
 
 /**
+ * Get the total donated by a user.
+ *
+ * Defaults to the currently logged-in user when $user_id is 0 and no
+ * email is given. Includes guest orders placed with the same billing
+ * email as the registered account (like the admin customer summary).
+ *
+ * @param int    $user_id Registered customer user ID (0 = current user).
+ * @param string $email   Billing email to match (skip when empty).
+ * @return float
+ */
+function wccd_get_user_donation_total( int $user_id = 0, string $email = '' ): float {
+	if ( $user_id <= 0 ) {
+		$user_id = get_current_user_id();
+	}
+
+	if ( $user_id <= 0 ) {
+		return 0.0;
+	}
+
+	if ( '' === $email ) {
+		$user  = get_userdata( $user_id );
+		$email = $user instanceof \WP_User ? (string) $user->user_email : '';
+	}
+
+	return WcCategoryDonations\Donations::instance()->get_customer_donation_total( $user_id, $email );
+}
+
+/**
  * Deprecated alias of wccd_get_donation_percentage().
  *
  * Kept for backward compatibility with the pre-1.1.0 "razas" plugin name.

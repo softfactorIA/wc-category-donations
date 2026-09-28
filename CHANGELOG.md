@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+
+- New shortcode `[wccd_user_donation_total]` rendering the total donated
+  by a user: defaults to the currently logged-in user, accepts an
+  optional `user` attribute (user ID) and the standard `format="0"`
+  plain-number option. Backed by the new
+  `Donations::get_customer_donation_total()` aggregation and the public
+  `wccd_get_user_donation_total()` function; the admin customer summary
+  reuses the same aggregation.
+
 ## [1.1.0] - 2026-09-27
 
 ### Changed

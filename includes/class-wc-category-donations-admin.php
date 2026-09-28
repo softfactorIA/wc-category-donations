@@ -172,12 +172,11 @@ class Admin {
 			return;
 		}
 
-		$total        = 0.0;
+		$total        = Donations::instance()->get_customer_donation_total( (int) $user->ID, (string) $user->user_email, $rows );
 		$orders       = array();
 		$per_category = array();
 
 		foreach ( $rows as $row ) {
-			$total += $row['donation_amount'];
 			$orders[ $row['order_id'] ] = true;
 
 			$name = $row['category_name'];

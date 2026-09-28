@@ -65,9 +65,13 @@ The shortcodes expose the per-category donation settings:
   orders with active donations, rounded to an integer.
 * `[wccd_cart_donation_amount]` — the donation amount the current cart
   contents contribute, on the cart page.
+* `[wccd_user_donation_total]` — the total donated by a user, formatted
+  with the store currency. Defaults to the currently logged-in user;
+  pass `user="<ID>"` to render a specific registered user. Pass
+  `format="0"` for the plain number without currency markup.
 
-All except `[wccd_donations_total]` accept an optional `category` attribute
-with a category slug:
+All except `[wccd_donations_total]` and `[wccd_user_donation_total]`
+accept an optional `category` attribute with a category slug:
 
 `[wccd_donation_percentage category="cachena"]`
 
@@ -88,6 +92,9 @@ Theme developers can use the public functions instead:
   a category, as a float.
 * `wccd_get_donations_total()` — the grand total of all recorded
   donations, as a float.
+* `wccd_get_user_donation_total( $user_id = 0, $email = '' )` — the total
+  donated by a user, as a float (0 = the currently logged-in user; guest
+  orders with the same billing email are included).
 
 == Upgrade from the pre-1.1.0 "razas" plugin ==
 

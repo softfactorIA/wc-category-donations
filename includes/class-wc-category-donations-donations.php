@@ -903,6 +903,33 @@ final class Donations {
 	}
 
 	/**
+	 * Total donated by a customer.
+	 *
+	 * Sums the donation_amount of the rows returned by
+	 * get_customer_donations(). Pass a preloaded $rows array (e.g. when the
+	 * caller already fetched the rows for another purpose) to avoid a second
+	 * query; the two arguments are then ignored.
+	 *
+	 * @param int                   $user_id Registered customer user ID (skip when 0).
+	 * @param string                $email   Billing email to match (skip when empty).
+	 * @param array<int,array>|null $rows    Preloaded customer rows, or null to load them.
+	 * @return float
+	 */
+	public function get_customer_donation_total( int $user_id = 0, string $email = '', ?array $rows = null ): float {
+		if ( null === $rows ) {
+			$rows = $this->get_customer_donations( $user_id, $email );
+		}
+
+		$total = 0.0;
+
+		foreach ( $rows as $row ) {
+			$total += (float) $row['donation_amount'];
+		}
+
+		return $total;
+	}
+
+	/**
 	 * Grand total donated across all categories.
 	 *
 	 * Sum of all recorded donations.

@@ -23,6 +23,7 @@ final class Shortcodes {
 	public const DONATING_ORDERS = 'wccd_donating_orders';
 	public const DONATION_AVERAGE = 'wccd_donation_average';
 	public const CART_AMOUNT      = 'wccd_cart_donation_amount';
+	public const USER_TOTAL       = 'wccd_user_donation_total';
 
 	public function __construct() {
 		add_shortcode( self::PERCENTAGE, array( $this, 'render_percentage' ) );
@@ -33,6 +34,7 @@ final class Shortcodes {
 		add_shortcode( self::DONATING_ORDERS, array( $this, 'render_donating_orders' ) );
 		add_shortcode( self::DONATION_AVERAGE, array( $this, 'render_donation_average' ) );
 		add_shortcode( self::CART_AMOUNT, array( $this, 'render_cart_donation_amount' ) );
+		add_shortcode( self::USER_TOTAL, array( $this, 'render_user_donation_total' ) );
 
 		// Deprecated pre-1.1.0 shortcode tags; kept so existing content keeps
 		// rendering without edits.
@@ -169,6 +171,48 @@ final class Shortcodes {
 		);
 
 		return $this->format_money( Donations::instance()->get_total_amount(), $atts['format'] );
+	}
+
+	/**
+	 * Render the total donated by a user.
+	 *
+	 * Defaults to the currently logged-in user. Pass user="<ID>" to render
+	 * a specific registered user, and format="0" for the plain number
+	 * without currency markup. Renders nothing when no user can be
+	 * resolved.
+	 *
+	 * @param array|string $atts Shortcode attributes.
+	 */
+	public function render_user_donation_total( $atts ): string {
+		$atts = shortcode_atts(
+			array(
+				'user'   => 0,
+				'format' => 1,
+			),
+			$atts,
+			self::USER_TOTAL
+		);
+
+		$user_id = (int) $atts['user'];
+
+		if ( $user_id <= 0 ) {
+			$user_id = get_current_user_id();
+		}
+
+		if ( $user_id <= 0 ) {
+			return '';
+		}
+
+		$email = '';
+		$user  = get_userdata( $user_id );
+
+		if ( $user instanceof \WP_User ) {
+			$email = (string) $user->user_email;
+		}
+
+		$total = Donations::instance()->get_customer_donation_total( $user_id, $email );
+
+		return $this->format_money( $total, $atts['format'] );
 	}
 
 	/**
