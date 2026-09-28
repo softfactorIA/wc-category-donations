@@ -76,5 +76,4 @@ jobs:
         run: |
           gh release create "$GITHUB_REF_NAME" "wc-category-donations-${{ steps.version.outputs.version }}.zip" \
             --title "Release ${GITHUB_REF_NAME}" \
-            --notes-file "${{ steps.notes.outputs.notes-file }}" \
-            --clobber
+            --notes-file "${{ steps.notes.outputs.notes-file }}"
