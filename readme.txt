@@ -137,6 +137,24 @@ shortcode renders nothing until one is chosen.
 
 == Changelog ==
 
+= 1.2.0 =
+* New `[wccd_user_donation_total]` shortcode: the total donated by a user
+  (recorded orders, including guest orders sharing the billing email).
+  Defaults to the currently logged-in user; pass `user="<ID>"` for a
+  specific registered user and `format="0"` for the plain number.
+* New "About" tab on the plugin admin page: brief description, source
+  repository and license links, and the support options (free community
+  support on the GitHub issue tracker, paid professional support via
+  fernandocoello.com).
+* WooCommerce is now declared as a plugin dependency: the `Requires
+  Plugins: woocommerce` header plus a bootstrap guard that skips the
+  plugin submodules and shows an admin notice when WooCommerce is
+  missing or inactive.
+* The Plugins screen row shows "Settings" and "Github" links instead of
+  the plugin site and the "By <author>" entry.
+* Translations reviewed: es_ES and gl_ES catalogs updated for the About
+  and Support strings.
+
 = 1.1.0 =
 * Customer donations summary on the user edit screen (Users -> edit):
   total donated on behalf of the customer (registered orders plus guest

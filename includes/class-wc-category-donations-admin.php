@@ -736,6 +736,14 @@ class Admin {
 				'example'     => '[' . Shortcodes::DONATION_AVERAGE . ']',
 				'preview'     => $this->shortcode_preview( '[' . Shortcodes::DONATION_AVERAGE . ']' ),
 			),
+			array(
+				'tag'         => Shortcodes::USER_TOTAL,
+				'attributes'  => 'user="<ID>" (optional) · format="0" (optional)',
+				'description' => __( 'Total donated by a user, including guest orders with the same billing email. Defaults to the currently logged-in user; pass user="<ID>" for a specific registered user. Renders nothing when no user can be resolved.', 'wc-category-donations' ),
+				'example'     => '[' . Shortcodes::USER_TOTAL . ']',
+				'example_raw' => '[' . Shortcodes::USER_TOTAL . ' user="1" format="0"]',
+				'preview'     => '<em>' . esc_html__( 'Depends on the resolved user', 'wc-category-donations' ) . '</em>',
+			),
 		);
 
 		echo '<h2>' . esc_html__( 'Plugin shortcodes', 'wc-category-donations' ) . '</h2>';

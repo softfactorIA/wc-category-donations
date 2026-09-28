@@ -2,37 +2,41 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Donations by category 1.1.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wc-category-donations\n"
-"POT-Creation-Date: 2026-09-27T10:43:12+00:00\n"
+"Project-Id-Version: Donations by category 1.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wc-category-"
+"donations\n"
+"POT-Creation-Date: 2026-09-28T19:25:40+00:00\n"
 "PO-Revision-Date: 2026-09-27 12:00:00+0000\n"
 "Last-Translator: F.Coello (satoko) & R.Couto (caligari)\n"
 "Language-Team: Galician\n"
 "Language: gl_ES\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: wc-category-donations\n"
 
 #. Plugin Name of the plugin
-#: wc-category-donations.php
-#: includes/class-wc-category-donations-admin.php:41
-#: includes/class-wc-category-donations-admin.php:42
-#: includes/class-wc-category-donations-admin.php:247
+#: wc-category-donations.php includes/class-wc-category-donations-admin.php:43
+#: includes/class-wc-category-donations-admin.php:44
+#: includes/class-wc-category-donations-admin.php:362
 msgid "Donations by category"
 msgstr "Donations by category"
 
 #. Plugin URI of the plugin
 #: wc-category-donations.php
-msgid "https://example.local/wc-category-donations"
-msgstr "https://example.local/wc-category-donations"
+msgid "https://github.com/softfactorIA/wc-category-donations"
+msgstr ""
 
 #. Description of the plugin
 #: wc-category-donations.php
-msgid "WooCommerce companion plugin with per-category donation settings and shortcodes."
-msgstr "Plugin complementario de WooCommerce con axustes de doazóns por categoría e shortcodes."
+msgid ""
+"WooCommerce companion plugin with per-category donation settings and "
+"shortcodes."
+msgstr ""
+"Plugin complementario de WooCommerce con axustes de doazóns por categoría e "
+"shortcodes."
 
 #. Author of the plugin
 #: wc-category-donations.php
@@ -44,230 +48,397 @@ msgstr "F.Coello (satoko) & R.Couto (caligari)"
 msgid "https://example.local"
 msgstr "https://example.local"
 
-#: includes/class-wc-category-donations-admin.php:89
-#: includes/class-wc-category-donations-admin.php:106
+#: includes/class-wc-category-donations-admin.php:91
+#: includes/class-wc-category-donations-admin.php:108
 msgid "You do not have permission to perform this action."
 msgstr "Non tes permiso para realizar esta acción."
 
-#: includes/class-wc-category-donations-admin.php:241
+#: includes/class-wc-category-donations-admin.php:169
+msgid "Customer donations"
+msgstr "Doazóns do cliente"
+
+#: includes/class-wc-category-donations-admin.php:172
+msgid "No donations recorded for this customer."
+msgstr "Non hai doazóns rexistradas para este cliente."
+
+#. translators: %s is the total donated amount.
+#: includes/class-wc-category-donations-admin.php:206
+#, php-format
+msgid "Total donated by this customer: %s"
+msgstr "Total doado por este cliente: %s"
+
+#. translators: %d is the number of orders with at least one active donation.
+#: includes/class-wc-category-donations-admin.php:209
+#: includes/class-wc-category-donations-admin.php:573
+#, php-format
+msgid "Orders with donation: %d"
+msgstr "Pedidos con doazón: %d"
+
+#: includes/class-wc-category-donations-admin.php:214
+#: includes/class-wc-category-donations-admin.php:235
+#: includes/class-wc-category-donations-admin.php:549
+#: includes/class-wc-category-donations-admin.php:646
+#: includes/class-wc-category-donations-admin.php:847
+msgid "Category"
+msgstr "Categoría"
+
+#: includes/class-wc-category-donations-admin.php:215
+#: includes/class-wc-category-donations-admin.php:550
+msgid "Orders with donation"
+msgstr "Pedidos con doazón"
+
+#: includes/class-wc-category-donations-admin.php:216
+#: includes/class-wc-category-donations-admin.php:551
+msgid "Total donated"
+msgstr "Total doado"
+
+#: includes/class-wc-category-donations-admin.php:230
+msgid "Recent donations"
+msgstr "Doazóns recentes"
+
+#: includes/class-wc-category-donations-admin.php:233
+#: includes/class-wc-category-donations-admin.php:645
+msgid "Order"
+msgstr "Pedido"
+
+#: includes/class-wc-category-donations-admin.php:234
+msgid "Date"
+msgstr "Data"
+
+#: includes/class-wc-category-donations-admin.php:236
+#: includes/class-wc-category-donations-admin.php:647
+msgid "Amount"
+msgstr "Importe"
+
+#: includes/class-wc-category-donations-admin.php:355
 #: includes/class-wc-category-donations-blocks.php:46
 #: includes/class-wc-category-donations-blocks.php:75
 msgid "Donations"
 msgstr "Doazóns"
 
-#: includes/class-wc-category-donations-admin.php:242
+#: includes/class-wc-category-donations-admin.php:356
+#: includes/class-wc-category-donations-admin.php:430
 msgid "Settings"
 msgstr "Axustes"
 
-#: includes/class-wc-category-donations-admin.php:243
+#: includes/class-wc-category-donations-admin.php:357
 msgid "Shortcodes"
 msgstr "Shortcodes"
 
-#: includes/class-wc-category-donations-admin.php:281
+#: includes/class-wc-category-donations-admin.php:358
+#: includes/class-wc-category-donations-admin.php:447
+msgid "About"
+msgstr "Acerca de"
+
+#: includes/class-wc-category-donations-admin.php:436
+msgid "Github"
+msgstr "Github"
+
+#: includes/class-wc-category-donations-admin.php:449
+msgid ""
+"Donations by category adds a donation percentage and a cause to each product "
+"category. The donation amount is calculated on the product price before "
+"taxes, recorded with the order, and adjusted automatically when orders are "
+"refunded or cancelled."
+msgstr ""
+"Donations by category engade unha porcentaxe de doazón e unha causa a cada "
+"categoría de produto. O importe da doazón calcúlase sobre o prezo do produto "
+"antes de impostos, rexístrase co pedido e axústase automaticamente cando os "
+"pedidos se reembolsan ou cancelan."
+
+#: includes/class-wc-category-donations-admin.php:452
+msgid ""
+"The Donations tab shows the recorded totals (per category, per year and "
+"overall), the list of cancelled donations, and lets you download an annual "
+"CSV report. The customer donations summary appears on the user edit screen, "
+"and the Settings tab controls the default percentage and the donation "
+"message."
+msgstr ""
+"A pestana Doazóns amosa os totais rexistrados (por categoría, por ano e "
+"global), a lista de doazóns canceladas e permite descargar un informe anual "
+"en CSV. O resumo de doazóns do cliente aparece na pantalla de edición de "
+"usuario, e a pestana Axustes controla a porcentaxe por defecto e a mensaxe "
+"de doazón."
+
+#: includes/class-wc-category-donations-admin.php:455
+msgid ""
+"Shortcodes and public functions let themes display donation information "
+"anywhere."
+msgstr ""
+"Os shortcodes e funcións públicas permiten amosar información das doazóns en "
+"calquera parte do tema."
+
+#: includes/class-wc-category-donations-admin.php:456
+msgid "See the shortcodes tab."
+msgstr "Ver a pestana de shortcodes."
+
+#: includes/class-wc-category-donations-admin.php:460
+msgid "Source code:"
+msgstr "Código fonte:"
+
+#: includes/class-wc-category-donations-admin.php:464
+msgid "License:"
+msgstr "Licencia:"
+
+#: includes/class-wc-category-donations-admin.php:468
+msgid "Authors:"
+msgstr "Autores:"
+
+#: includes/class-wc-category-donations-admin.php:472
+msgid "Support"
+msgstr "Soporte"
+
+#: includes/class-wc-category-donations-admin.php:475
+msgid "Community (free):"
+msgstr "Comunidade (de balde):"
+
+#: includes/class-wc-category-donations-admin.php:476
+msgid "GitHub issue tracker"
+msgstr "Seguimento de incidencias de GitHub"
+
+#: includes/class-wc-category-donations-admin.php:479
+msgid "Professional (paid):"
+msgstr "Profesional (de pago):"
+
+#: includes/class-wc-category-donations-admin.php:498
 msgid "Default donation percentage"
 msgstr "Porcentaxe de doazón por defecto"
 
-#: includes/class-wc-category-donations-admin.php:295
+#: includes/class-wc-category-donations-admin.php:512
 msgid "Applied to product categories without their own percentage."
 msgstr "Aplícase ás categorías de produto sen porcentaxe propia."
 
-#: includes/class-wc-category-donations-admin.php:300
+#: includes/class-wc-category-donations-admin.php:517
 msgid "Donation by category"
 msgstr "Doazón por categoría"
 
 #. translators: %d is the number of cancelled donations.
-#: includes/class-wc-category-donations-admin.php:317
+#: includes/class-wc-category-donations-admin.php:534
 #, php-format
 msgid "%d donation cancelled."
 msgid_plural "%d donations cancelled."
 msgstr[0] "%d doazón cancelada."
 msgstr[1] "%d doazóns canceladas."
 
-#: includes/class-wc-category-donations-admin.php:319
+#: includes/class-wc-category-donations-admin.php:536
 msgid "No donations needed cancelling."
 msgstr "Non hai doazóns que cancelar."
 
-#: includes/class-wc-category-donations-admin.php:327
+#: includes/class-wc-category-donations-admin.php:544
 msgid "No donations recorded yet."
 msgstr "Aínda non hai doazóns rexistradas."
 
-#: includes/class-wc-category-donations-admin.php:329
+#: includes/class-wc-category-donations-admin.php:546
 msgid "Donation totals by category"
 msgstr "Totais de doazón por categoría"
 
-#: includes/class-wc-category-donations-admin.php:332
-#: includes/class-wc-category-donations-admin.php:429
-#: includes/class-wc-category-donations-admin.php:622
-msgid "Category"
-msgstr "Categoría"
-
-#: includes/class-wc-category-donations-admin.php:333
-msgid "Orders with donation"
-msgstr "Pedidos con doazón"
-
-#: includes/class-wc-category-donations-admin.php:334
-msgid "Total donated"
-msgstr "Total doado"
-
-#: includes/class-wc-category-donations-admin.php:348
+#: includes/class-wc-category-donations-admin.php:565
 msgid "Total"
 msgstr "Total"
 
-#. translators: %d is the number of orders with at least one active donation.
-#: includes/class-wc-category-donations-admin.php:356
-#, php-format
-msgid "Orders with donation: %d"
-msgstr "Pedidos con doazón: %d"
-
 #. translators: %d is the average donation percentage, rounded to an integer.
-#: includes/class-wc-category-donations-admin.php:359
+#: includes/class-wc-category-donations-admin.php:576
 #, php-format
 msgid "Average donation percentage: %d%%"
 msgstr "Porcentaxe media de doazón: %d%%"
 
-#: includes/class-wc-category-donations-admin.php:368
+#: includes/class-wc-category-donations-admin.php:585
 msgid "Annual report (CSV)"
 msgstr "Informe anual (CSV)"
 
-#: includes/class-wc-category-donations-admin.php:369
+#: includes/class-wc-category-donations-admin.php:586
 msgid "Download all donations of a year (active and cancelled) as a CSV file."
-msgstr "Descarga todas as doazóns dun ano (activas e canceladas) nun arquivo CSV."
+msgstr ""
+"Descarga todas as doazóns dun ano (activas e canceladas) nun arquivo CSV."
 
-#: includes/class-wc-category-donations-admin.php:396
+#: includes/class-wc-category-donations-admin.php:613
 msgid "Year"
 msgstr "Ano"
 
-#: includes/class-wc-category-donations-admin.php:398
+#: includes/class-wc-category-donations-admin.php:615
 msgid "Download donations CSV"
 msgstr "Descargar doazóns CSV"
 
 #. translators: %d is the year.
-#: includes/class-wc-category-donations-admin.php:412
+#: includes/class-wc-category-donations-admin.php:629
 #, php-format
 msgid "Cancelled donations (%d)"
 msgstr "Doazóns canceladas (%d)"
 
-#: includes/class-wc-category-donations-admin.php:413
-msgid "Donations recorded for orders that are cancelled, refunded, trashed or left in draft are marked as cancelled and excluded from the totals above. Use the button to re-scan after bulk order changes."
-msgstr "As doazóns rexistradas de pedidos cancelados, reembolsados, eliminados ou en borrador márcanse como canceladas e exclúense dos totais anteriores. Usa o botón para volver a escanear tras cambios masivos de pedidos."
+#: includes/class-wc-category-donations-admin.php:630
+msgid ""
+"Donations recorded for orders that are cancelled, refunded, trashed or left "
+"in draft are marked as cancelled and excluded from the totals above. Use the "
+"button to re-scan after bulk order changes."
+msgstr ""
+"As doazóns rexistradas de pedidos cancelados, reembolsados, eliminados ou en "
+"borrador márcanse como canceladas e exclúense dos totais anteriores. Usa o "
+"botón para volver a escanear tras cambios masivos de pedidos."
 
-#: includes/class-wc-category-donations-admin.php:418
+#: includes/class-wc-category-donations-admin.php:635
 msgid "Remove donations from cancelled/trashed orders"
 msgstr "Eliminar doazóns de pedidos cancelados/eliminados"
 
-#: includes/class-wc-category-donations-admin.php:422
+#: includes/class-wc-category-donations-admin.php:639
 msgid "No cancelled donations."
 msgstr "Non hai doazóns canceladas."
 
-#: includes/class-wc-category-donations-admin.php:428
-msgid "Order"
-msgstr "Pedido"
-
-#: includes/class-wc-category-donations-admin.php:430
-msgid "Amount"
-msgstr "Importe"
-
-#: includes/class-wc-category-donations-admin.php:431
+#: includes/class-wc-category-donations-admin.php:648
 msgid "Reason"
 msgstr "Motivo"
 
-#: includes/class-wc-category-donations-admin.php:432
+#: includes/class-wc-category-donations-admin.php:649
 msgid "Cancelled at"
 msgstr "Cancelada o"
 
-#: includes/class-wc-category-donations-admin.php:455
+#: includes/class-wc-category-donations-admin.php:672
 msgid "WooCommerce is not active. Shortcode previews require it."
-msgstr "WooCommerce non está activo. As vistas previas de shortcodes requíreno."
+msgstr ""
+"WooCommerce non está activo. As vistas previas de shortcodes requíreno."
 
-#: includes/class-wc-category-donations-admin.php:465
-msgid "Donation percentage (0-100) of the current product category, or of the category in the attribute."
-msgstr "Porcentaxe de doazón (0-100) da categoría de produto actual, ou da categoría do atributo."
+#: includes/class-wc-category-donations-admin.php:682
+msgid ""
+"Donation percentage (0-100) of the current product category, or of the "
+"category in the attribute."
+msgstr ""
+"Porcentaxe de doazón (0-100) da categoría de produto actual, ou da categoría "
+"do atributo."
 
-#: includes/class-wc-category-donations-admin.php:472
-msgid "Donation cause text of the current product category, or of the category in the attribute."
-msgstr "Texto da causa de doazón da categoría de produto actual, ou da categoría do atributo."
+#: includes/class-wc-category-donations-admin.php:689
+msgid ""
+"Donation cause text of the current product category, or of the category in "
+"the attribute."
+msgstr ""
+"Texto da causa de doazón da categoría de produto actual, ou da categoría do "
+"atributo."
 
-#: includes/class-wc-category-donations-admin.php:479
-msgid "Donation amount for the current product: price (without tax) times the category percentage. Formatted with the store currency; format=\"0\" returns the plain number without markup."
-msgstr "Importe de doazón do produto actual: prezo (sen impostos) pola porcentaxe da categoría. Formateado coa moeda da tenda; format=\"0\" devolve o número simple sen marcado."
+#: includes/class-wc-category-donations-admin.php:696
+msgid ""
+"Donation amount for the current product: price (without tax) times the "
+"category percentage. Formatted with the store currency; format=\"0\" returns "
+"the plain number without markup."
+msgstr ""
+"Importe de doazón do produto actual: prezo (sen impostos) pola porcentaxe da "
+"categoría. Formateado coa moeda da tenda; format=\"0\" devolve o número "
+"simple sen marcado."
 
-#: includes/class-wc-category-donations-admin.php:482
+#: includes/class-wc-category-donations-admin.php:699
 msgid "Product page only"
 msgstr "Só páxina de produto"
 
-#: includes/class-wc-category-donations-admin.php:487
-msgid "Donation amount for the current cart contents: net line totals times the category percentages, like the order recording. Shows 0 when nothing donates."
-msgstr "Importe de doazón do contido actual do carriño: totais netos de liña polas porcentaxes de categoría, como no rexistro de pedidos. Mostra 0 cando nada doa."
+#: includes/class-wc-category-donations-admin.php:704
+msgid ""
+"Donation amount for the current cart contents: net line totals times the "
+"category percentages, like the order recording. Shows 0 when nothing donates."
+msgstr ""
+"Importe de doazón do contido actual do carriño: totais netos de liña polas "
+"porcentaxes de categoría, como no rexistro de pedidos. Mostra 0 cando nada "
+"doa."
 
-#: includes/class-wc-category-donations-admin.php:490
+#: includes/class-wc-category-donations-admin.php:707
 msgid "Cart page only"
 msgstr "Só páxina de carriño"
 
-#: includes/class-wc-category-donations-admin.php:495
-msgid "Total donated for the category (recorded donations) from the current context or the attribute. Shows an error when no category can be resolved; format=\"0\" returns the plain number and the error as plain text."
-msgstr "Total doado para a categoría (doazóns rexistradas) desde o contexto actual ou o atributo. Mostra un erro cando non se pode resolver a categoría; format=\"0\" devolve o número simple e o erro como texto simple."
+#: includes/class-wc-category-donations-admin.php:712
+msgid ""
+"Total donated for the category (recorded donations) from the current context "
+"or the attribute. Shows an error when no category can be resolved; "
+"format=\"0\" returns the plain number and the error as plain text."
+msgstr ""
+"Total doado para a categoría (doazóns rexistradas) desde o contexto actual "
+"ou o atributo. Mostra un erro cando non se pode resolver a categoría; "
+"format=\"0\" devolve o número simple e o erro como texto simple."
 
-#: includes/class-wc-category-donations-admin.php:503
-msgid "Grand total of all donations recorded by the plugin. format=\"0\" returns the plain number without markup."
-msgstr "Total xeral de todas as doazóns rexistradas polo plugin. format=\"0\" devolve o número simple sen marcado."
+#: includes/class-wc-category-donations-admin.php:720
+msgid ""
+"Grand total of all donations recorded by the plugin. format=\"0\" returns "
+"the plain number without markup."
+msgstr ""
+"Total xeral de todas as doazóns rexistradas polo plugin. format=\"0\" "
+"devolve o número simple sen marcado."
 
-#: includes/class-wc-category-donations-admin.php:511
+#: includes/class-wc-category-donations-admin.php:728
 msgid "Number of distinct orders with at least one active donation."
 msgstr "Número de pedidos distintos con polo menos unha doazón activa."
 
-#: includes/class-wc-category-donations-admin.php:518
-msgid "Aggregate donation percentage across all orders with active donations (total donated divided by the net order value), rounded to an integer."
-msgstr "Porcentaxe de doazón agregada de todos os pedidos con doazóns activas (total doado dividido entre o valor neto do pedido), redondeada a un enteiro."
+#: includes/class-wc-category-donations-admin.php:735
+msgid ""
+"Aggregate donation percentage across all orders with active donations (total "
+"donated divided by the net order value), rounded to an integer."
+msgstr ""
+"Porcentaxe de doazón agregada de todos os pedidos con doazóns activas (total "
+"doado dividido entre o valor neto do pedido), redondeada a un enteiro."
 
-#: includes/class-wc-category-donations-admin.php:524
+#: includes/class-wc-category-donations-admin.php:742
+msgid ""
+"Total donated by a user, including guest orders with the same billing email. "
+"Defaults to the currently logged-in user; pass user=\"<ID>\" for a specific "
+"registered user. Renders nothing when no user can be resolved."
+msgstr ""
+
+#: includes/class-wc-category-donations-admin.php:745
+msgid "Depends on the resolved user"
+msgstr "Depende do usuario resolto"
+
+#: includes/class-wc-category-donations-admin.php:749
 msgid "Plugin shortcodes"
 msgstr "Shortcodes do plugin"
 
-#: includes/class-wc-category-donations-admin.php:527
+#: includes/class-wc-category-donations-admin.php:752
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: includes/class-wc-category-donations-admin.php:528
+#: includes/class-wc-category-donations-admin.php:753
 msgid "Description"
 msgstr "Descrición"
 
-#: includes/class-wc-category-donations-admin.php:529
+#: includes/class-wc-category-donations-admin.php:754
 msgid "Attributes"
 msgstr "Atributos"
 
-#: includes/class-wc-category-donations-admin.php:530
+#: includes/class-wc-category-donations-admin.php:755
 msgid "Example"
 msgstr "Exemplo"
 
-#: includes/class-wc-category-donations-admin.php:531
+#: includes/class-wc-category-donations-admin.php:756
 msgid "Preview"
 msgstr "Vista previa"
 
-#: includes/class-wc-category-donations-admin.php:552
+#: includes/class-wc-category-donations-admin.php:777
 msgid "Previews reflect the current values on this site."
 msgstr "As vistas previas reflicten os valores actuais deste sitio."
 
-#: includes/class-wc-category-donations-admin.php:553
-msgid "Adding format=\"0\" to the amount and total shortcodes returns the plain number (two decimals, dot separator, no currency symbol or HTML); the category error is then plain text."
-msgstr "Engadir format=\"0\" aos shortcodes de importe e total devolve o número simple (dous decimais, separador de punto, sen símbolo de moeda nin HTML); o erro de categoría queda entón como texto simple."
+#: includes/class-wc-category-donations-admin.php:778
+msgid ""
+"Adding format=\"0\" to the amount and total shortcodes returns the plain "
+"number (two decimals, dot separator, no currency symbol or HTML); the "
+"category error is then plain text."
+msgstr ""
+"Engadir format=\"0\" aos shortcodes de importe e total devolve o número "
+"simple (dous decimais, separador de punto, sen símbolo de moeda nin HTML); o "
+"erro de categoría queda entón como texto simple."
 
-#: includes/class-wc-category-donations-admin.php:601
-msgid "WooCommerce is not active. Activate it to configure donations per product category."
-msgstr "WooCommerce non está activo. Actívao para configurar as doazóns por categoría de produto."
+#: includes/class-wc-category-donations-admin.php:826
+msgid ""
+"WooCommerce is not active. Activate it to configure donations per product "
+"category."
+msgstr ""
+"WooCommerce non está activo. Actívao para configurar as doazóns por "
+"categoría de produto."
 
-#: includes/class-wc-category-donations-admin.php:616
+#: includes/class-wc-category-donations-admin.php:841
 msgid "No product categories found yet."
 msgstr "Aínda non hai categorías de produto."
 
-#: includes/class-wc-category-donations-admin.php:623
+#: includes/class-wc-category-donations-admin.php:848
 msgid "Donation percentage (%)"
 msgstr "Porcentaxe de doazón (%)"
 
-#: includes/class-wc-category-donations-admin.php:624
+#: includes/class-wc-category-donations-admin.php:849
 msgid "Cause"
 msgstr "Causa"
 
-#: includes/class-wc-category-donations-admin.php:646
+#: includes/class-wc-category-donations-admin.php:871
 msgid "Leave the percentage empty to use the default above."
 msgstr "Deixa a porcentaxe baleira para usar o valor por defecto de arriba."
 
@@ -307,87 +478,38 @@ msgstr "Porcentaxe media de doazón:"
 msgid "Shortcode reference (admin)"
 msgstr "Referencia de shortcodes (admin)"
 
-#: includes/class-wc-category-donations-shortcodes.php:202
-msgid "Donations by category: no category found. Add a category attribute or use this shortcode on a product category or product page."
-msgstr "Donations by category: non se atopou ningunha categoría. Engade un atributo de categoría ou usa este shortcode nunha páxina de categoría de produto ou de produto."
+#: includes/class-wc-category-donations-shortcodes.php:246
+msgid ""
+"Donations by category: no category found. Add a category attribute or use "
+"this shortcode on a product category or product page."
+msgstr ""
+"Donations by category: non se atopou ningunha categoría. Engade un atributo "
+"de categoría ou usa este shortcode nunha páxina de categoría de produto ou "
+"de produto."
+
+#: wc-category-donations.php:59
+msgid ""
+"Donations by category requires WooCommerce to be installed and active. The "
+"plugin is not running."
+msgstr ""
+"Donations by category require que WooCommerce estea instalado e activo. O "
+"plugin non está en funcionamento."
+
+#: block-donations/block.json
+msgctxt "block title"
+msgid "Donations"
+msgstr ""
 
 #: block-donations/block.json
 msgctxt "block description"
-msgid "Demo/diagnostic block showing the donation information relevant to the current page context (any page, category, product or cart), plus the full donation summary."
-msgstr "Bloque de demostración/diagnóstico que mostra a información de doazóns relevante para o contexto actual da páxina (calquera páxina, categoría, produto ou carriño), ademais do resumo completo de doazóns."
+msgid ""
+"Demo/diagnostic block showing the donation information relevant to the "
+"current page context (any page, category, product or cart), plus the full "
+"donation summary."
+msgstr ""
+"Bloque de demostración/diagnóstico que mostra a información de doazóns "
+"relevante para o contexto actual da páxina (calquera páxina, categoría, "
+"produto ou carriño), ademais do resumo completo de doazóns."
 
-#: includes/class-wc-category-donations-admin.php:168
-msgid "Customer donations"
-msgstr "Doazóns do cliente"
-
-#: includes/class-wc-category-donations-admin.php:171
-msgid "No donations recorded for this customer."
-msgstr "Non hai doazóns rexistradas para este cliente."
-
-#: includes/class-wc-category-donations-admin.php:206
-msgid "Total donated by this customer: %s"
-msgstr "Total doado por este cliente: %s"
-
-#: includes/class-wc-category-donations-admin.php:230
-msgid "Recent donations"
-msgstr "Doazóns recentes"
-
-#: includes/class-wc-category-donations-admin.php:234
-msgid "Date"
-msgstr "Data"
-
-#: wc-category-donations.php
-msgid "Donations by category requires WooCommerce to be installed and active. The plugin is not running."
-msgstr "Donations by category require que WooCommerce estea instalado e activo. O plugin non está en funcionamento."
-
-#: includes/class-wc-category-donations-admin.php
-msgid "About"
-msgstr "Acerca de"
-
-#: includes/class-wc-category-donations-admin.php
-msgid "Source code:"
-msgstr "Código fonte:"
-
-#: includes/class-wc-category-donations-admin.php
-msgid "Donations by category adds a donation percentage and a cause to each product category. The donation amount is calculated on the product price before taxes, recorded with the order, and adjusted automatically when orders are refunded or cancelled."
-msgstr "Donations by category engade unha porcentaxe de doazón e unha causa a cada categoría de produto. O importe da doazón calcúlase sobre o prezo do produto antes de impostos, rexístrase co pedido e axústase automaticamente cando os pedidos se reembolsan ou cancelan."
-
-#: includes/class-wc-category-donations-admin.php
-msgid "The Donations tab shows the recorded totals (per category, per year and overall), the list of cancelled donations, and lets you download an annual CSV report. The customer donations summary appears on the user edit screen, and the Settings tab controls the default percentage and the donation message."
-msgstr "A pestana Doazóns amosa os totais rexistrados (por categoría, por ano e global), a lista de doazóns canceladas e permite descargar un informe anual en CSV. O resumo de doazóns do cliente aparece na pantalla de edición de usuario, e a pestana Axustes controla a porcentaxe por defecto e a mensaxe de doazón."
-
-#: includes/class-wc-category-donations-admin.php
-msgid "Shortcodes and public functions let themes display donation information anywhere."
-msgstr "Os shortcodes e funcións públicas permiten amosar información das doazóns en calquera parte do tema."
-
-#: includes/class-wc-category-donations-admin.php
-msgid "See the shortcodes tab."
-msgstr "Ver a pestana de shortcodes."
-
-#: includes/class-wc-category-donations-admin.php
-msgid "License:"
-msgstr "Licencia:"
-
-#: includes/class-wc-category-donations-admin.php
-msgid "Authors:"
-msgstr "Autores:"
-
-#: includes/class-wc-category-donations-admin.php
-msgid "Support"
-msgstr "Soporte"
-
-#: includes/class-wc-category-donations-admin.php
-msgid "Community (free):"
-msgstr "Comunidade (de balde):"
-
-#: includes/class-wc-category-donations-admin.php
-msgid "GitHub issue tracker"
-msgstr "Seguimento de incidencias de GitHub"
-
-#: includes/class-wc-category-donations-admin.php
-msgid "Professional (paid):"
-msgstr "Profesional (de pago):"
-
-#: includes/class-wc-category-donations-admin.php
-msgid "Github"
-msgstr "Github"
+#~ msgid "https://example.local/wc-category-donations"
+#~ msgstr "https://example.local/wc-category-donations"
