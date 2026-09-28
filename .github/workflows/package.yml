@@ -87,4 +87,4 @@ jobs:
         env:
           SVN_USERNAME: ${{ secrets.WP_ORG_USERNAME }}
           SVN_PASSWORD: ${{ secrets.WP_ORG_PASSWORD }}
-          SLUG: wc-category-donations
+          SLUG: donations-by-category
