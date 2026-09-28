@@ -53,7 +53,28 @@ jobs:
           name: wc-category-donations-${{ steps.version.outputs.version }}.zip
           path: wc-category-donations-${{ steps.version.outputs.version }}.zip
 
+      - name: Extract release notes from changelog
+        id: notes
+        run: |
+          version="${{ steps.version.outputs.version }}"
+          awk -v v="$version" '
+            /^## \[/ {
+              if (index($0, "[" v "]") > 0) { on = 1; next }
+              if (on) exit
+            }
+            on { print }
+          ' CHANGELOG.md > release-notes.md
+          if [ ! -s release-notes.md ]; then
+            echo "::error::no changelog section for version $version"
+            exit 1
+          fi
+          echo "notes-file=release-notes.md" >> "$GITHUB_OUTPUT"
+
       - name: Create GitHub release with the zip
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" "wc-category-donations-${{ steps.version.outputs.version }}.zip"
+        run: |
+          gh release create "$GITHUB_REF_NAME" "wc-category-donations-${{ steps.version.outputs.version }}.zip" \
+            --title "Release ${GITHUB_REF_NAME}" \
+            --notes-file "${{ steps.notes.outputs.notes-file }}" \
+            --clobber
