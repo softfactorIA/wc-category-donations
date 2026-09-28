@@ -38,7 +38,7 @@ jobs:
           out = f"wc-category-donations-{version}.zip"
           with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as zf:
               for root, dirs, files in os.walk("."):
-                  dirs[:] = [d for d in dirs if not d.startswith(".")]
+                  dirs[:] = [d for d in dirs if not d.startswith(".") and d != "assets"]
                   files = [f for f in files if not f.startswith(".") and f != out]
                   for name in files:
                       full = os.path.join(root, name)
@@ -77,3 +77,14 @@ jobs:
           gh release create "$GITHUB_REF_NAME" "wc-category-donations-${{ steps.version.outputs.version }}.zip" \
             --title "Release ${GITHUB_REF_NAME}" \
             --notes-file "${{ steps.notes.outputs.notes-file }}"
+
+      - name: Prepare checkout for WordPress.org deploy
+        run: rm -rf .github
+
+      - name: Deploy to WordPress.org SVN
+        if: ${{ secrets.WP_ORG_USERNAME != '' && secrets.WP_ORG_PASSWORD != '' }}
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        env:
+          SVN_USERNAME: ${{ secrets.WP_ORG_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.WP_ORG_PASSWORD }}
+          SLUG: wc-category-donations
