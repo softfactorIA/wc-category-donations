@@ -76,8 +76,21 @@ final class Core {
 
 	/**
 	 * Boot frontend/admin submodules.
+	 *
+	 * WooCommerce defines its classes when its main file is included, i.e.
+	 * before 'plugins_loaded' fires, so class_exists() is a reliable check
+	 * at this point. Without WooCommerce the plugin does nothing except
+	 * show an admin notice: the 'Requires Plugins: woocommerce' header
+	 * already blocks activation on WordPress 6.5+, and this guard covers
+	 * older installs plus the case where WooCommerce is deactivated
+	 * afterwards.
 	 */
 	public function init(): void {
+		if ( ! class_exists( 'WooCommerce' ) ) {
+			add_action( 'admin_notices', 'wccd_missing_woocommerce_notice' );
+			return;
+		}
+
 		new Shortcodes();
 		new Blocks();
 		Donations::instance();

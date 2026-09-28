@@ -347,3 +347,7 @@ msgstr ""
 msgctxt "block description"
 msgid "Demo/diagnostic block showing the donation information relevant to the current page context (any page, category, product or cart), plus the full donation summary."
 msgstr ""
+
+#: wc-category-donations.php
+msgid "WooCommerce Category Donations requires WooCommerce to be installed and active. The plugin is not running."
+msgstr ""

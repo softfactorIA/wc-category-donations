@@ -10,6 +10,7 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: wc-category-donations
  * Requires at least: 6.0
+ * Requires Plugins: woocommerce
  * Requires PHP: 8.2
  * WC requires at least: 11.0
  * WC tested up to: 11.1.2
@@ -44,6 +45,20 @@ add_action(
 );
 
 WcCategoryDonations\Core::instance();
+
+/**
+ * Admin notice shown when WooCommerce is missing or inactive.
+ */
+function wccd_missing_woocommerce_notice() {
+	if ( ! current_user_can( 'activate_plugins' ) ) {
+		return;
+	}
+
+	printf(
+		'<div class="notice notice-error"><p>%s</p></div>',
+		esc_html__( 'WooCommerce Category Donations requires WooCommerce to be installed and active. The plugin is not running.', 'wc-category-donations' )
+	);
+}
 
 /**
  * Get the donation percentage (0-100) for a product category.

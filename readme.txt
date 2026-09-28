@@ -2,6 +2,7 @@
 Contributors: satoko, caligari
 Tags: woocommerce, donations
 Requires at least: 6.0
+Requires Plugins: woocommerce
 Tested up to: 7.1.2
 Requires PHP: 8.2
 WC requires at least: 11.0

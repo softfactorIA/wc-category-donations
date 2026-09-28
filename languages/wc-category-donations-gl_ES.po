@@ -340,3 +340,7 @@ msgstr "Doazóns recentes"
 #: includes/class-wc-category-donations-admin.php:234
 msgid "Date"
 msgstr "Data"
+
+#: wc-category-donations.php
+msgid "WooCommerce Category Donations requires WooCommerce to be installed and active. The plugin is not running."
+msgstr "WooCommerce Category Donations require que WooCommerce estea instalado e activo. O plugin non está en funcionamento."
