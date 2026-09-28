@@ -9,11 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Changed
 
-- Display name renamed to **Donations by category with WooCommerce**
-  (required by the WordPress.org trademark rules: the name must include
-  "with woocommerce"). Code, textdomain and folder slug stay
-  `wc-category-donations`; the wp.org slug at submission is
-  `donations-by-category-with-woocommerce`.
+- Display name renamed to **Donations by category** (WordPress.org no
+  longer allows the "woocommerce" term in plugin names or permalinks, so
+  the earlier "Donations by category with WooCommerce" choice was
+  dropped; the wp.org submission slug is `donations-by-category`). Code,
+  textdomain and folder slug stay `wc-category-donations`.
 
 ## [1.2.0] - 2026-09-28
 

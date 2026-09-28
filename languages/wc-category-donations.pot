@@ -2,7 +2,7 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Donations by category with WooCommerce 1.2.0\n"
+"Project-Id-Version: Donations by category 1.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wc-category-donations\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 #: includes/class-wc-category-donations-admin.php:42
 #: includes/class-wc-category-donations-admin.php:43
 #: includes/class-wc-category-donations-admin.php:352
-msgid "Donations by category with WooCommerce"
+msgid "Donations by category"
 msgstr ""
 
 #. Plugin URI of the plugin
@@ -335,7 +335,7 @@ msgid "Shortcode reference (admin)"
 msgstr ""
 
 #: includes/class-wc-category-donations-shortcodes.php:202
-msgid "Donations by category with WooCommerce: no category found. Add a category attribute or use this shortcode on a product category or product page."
+msgid "Donations by category: no category found. Add a category attribute or use this shortcode on a product category or product page."
 msgstr ""
 
 #: block-donations/block.json
@@ -344,7 +344,7 @@ msgid "Demo/diagnostic block showing the donation information relevant to the cu
 msgstr ""
 
 #: wc-category-donations.php
-msgid "Donations by category with WooCommerce requires WooCommerce to be installed and active. The plugin is not running."
+msgid "Donations by category requires WooCommerce to be installed and active. The plugin is not running."
 msgstr ""
 
 #: includes/class-wc-category-donations-admin.php
@@ -354,7 +354,7 @@ msgid "About"
 msgid "Source code:"
 
 #: includes/class-wc-category-donations-admin.php
-msgid "Donations by category with WooCommerce adds a donation percentage and a cause to each product category. The donation amount is calculated on the product price before taxes, recorded with the order, and adjusted automatically when orders are refunded or cancelled."
+msgid "Donations by category adds a donation percentage and a cause to each product category. The donation amount is calculated on the product price before taxes, recorded with the order, and adjusted automatically when orders are refunded or cancelled."
 
 #: includes/class-wc-category-donations-admin.php
 msgid "The Donations tab shows the recorded totals (per category, per year and overall), the list of cancelled donations, and lets you download an annual CSV report. The customer donations summary appears on the user edit screen, and the Settings tab controls the default percentage and the donation message."

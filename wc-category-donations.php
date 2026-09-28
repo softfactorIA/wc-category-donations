@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Donations by category with WooCommerce
+ * Plugin Name: Donations by category
  * Plugin URI:  https://github.com/softfactorIA/wc-category-donations
  * Description: WooCommerce companion plugin with per-category donation settings and shortcodes.
  * Version:     1.2.0
@@ -56,7 +56,7 @@ function wccd_missing_woocommerce_notice() {
 
 	printf(
 		'<div class="notice notice-error"><p>%s</p></div>',
-		esc_html__( 'Donations by category with WooCommerce requires WooCommerce to be installed and active. The plugin is not running.', 'wc-category-donations' )
+		esc_html__( 'Donations by category requires WooCommerce to be installed and active. The plugin is not running.', 'wc-category-donations' )
 	);
 }
 

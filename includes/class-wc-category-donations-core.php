@@ -1,6 +1,6 @@
 <?php
 /**
- * Core bootstrap and shared API for the Donations by category with WooCommerce
+ * Core bootstrap and shared API for the Donations by category
  * plugin.
  *
  * @package WcCategoryDonations
