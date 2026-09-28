@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.2.0] - 2026-09-28
 
 ### Added
 
@@ -20,6 +20,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   plugin, links to the source repository and license, and a Support
   section (free community support via the GitHub issue tracker, paid
   professional support via fernandocoello.com).
+- WooCommerce is now declared as a plugin dependency: the official
+  `Requires Plugins: woocommerce` header (enforced on WordPress 6.5+)
+  and a bootstrap guard in `Core::init()` that skips the plugin
+  submodules and shows an admin notice when WooCommerce is missing or
+  inactive.
 
 ### Changed
 
@@ -30,6 +35,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   The "By <author>" entry is no longer shown on the plugin row (authors
   remain in the plugin header, readme and the About tab). The `Plugin
   URI` header was updated accordingly.
+- Translations reviewed: new es_ES/gl_ES catalogs for the About and
+  Support strings, tab names aligned in the About prose, an orphan
+  "Source code" msgid removed and the duplicate "Donations" entry
+  merged.
 
 ## [1.1.0] - 2026-09-27
 
