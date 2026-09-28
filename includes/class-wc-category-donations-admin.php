@@ -40,8 +40,8 @@ class Admin {
 	 */
 	public function register_menu(): void {
 		add_menu_page(
-			__( 'WooCommerce Category Donations', 'wc-category-donations' ),
-			__( 'WooCommerce Category Donations', 'wc-category-donations' ),
+			__( 'Donations by category with WooCommerce', 'wc-category-donations' ),
+			__( 'Donations by category with WooCommerce', 'wc-category-donations' ),
 			'manage_options',
 			self::PAGE,
 			array( $this, 'render_page' ),
@@ -144,7 +144,7 @@ class Admin {
 			);
 		}
 
-		fclose( $output );
+		fclose( $output ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose
 		exit;
 	}
 
@@ -221,7 +221,7 @@ class Admin {
 			echo '<tr>';
 			echo '<td>' . esc_html( $row['category_name'] ) . '</td>';
 			echo '<td>' . esc_html( number_format_i18n( $row['orders'] ) ) . '</td>';
-			echo '<td>' . $this->format_amount( $row['total'] ) . '</td>';
+			echo '<td>' . wp_kses_post( $this->format_amount( $row['total'] ) ) . '</td>';
 			echo '</tr>';
 		}
 
@@ -253,7 +253,7 @@ class Admin {
 			echo '</td>';
 			echo '<td>' . esc_html( $row['created_at'] ) . '</td>';
 			echo '<td>' . esc_html( $row['category_name'] ) . '</td>';
-			echo '<td>' . $this->format_amount( $row['donation_amount'] ) . '</td>';
+			echo '<td>' . wp_kses_post( $this->format_amount( $row['donation_amount'] ) ) . '</td>';
 			echo '</tr>';
 		}
 
@@ -350,7 +350,7 @@ class Admin {
 			return;
 		}
 
-		$tab  = isset( $_GET['tab'] ) ? sanitize_key( wp_unslash( $_GET['tab'] ) ) : 'donations';
+		$tab  = isset( $_GET['tab'] ) ? sanitize_key( wp_unslash( $_GET['tab'] ) ) : 'donations'; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only tab display
 		$tabs = array(
 			'donations'  => __( 'Donations', 'wc-category-donations' ),
 			'settings'   => __( 'Settings', 'wc-category-donations' ),
@@ -359,7 +359,7 @@ class Admin {
 		);
 		?>
 		<div class="wrap">
-			<h1><?php esc_html_e( 'WooCommerce Category Donations', 'wc-category-donations' ); ?></h1>
+			<h1><?php esc_html_e( 'Donations by category with WooCommerce', 'wc-category-donations' ); ?></h1>
 			<nav class="nav-tab-wrapper">
 				<?php foreach ( $tabs as $key => $label ) : ?>
 					<a
@@ -403,7 +403,8 @@ class Admin {
 		}
 
 		$source_url = 'https://github.com/softfactorIA/wc-category-donations';
-		$by_prefix  = trim( sprintf( __( 'By %s', 'default' ), '' ) );
+		// translators: %s is the plugin author; taken from core ('default') so the label follows the admin locale.
+		$by_prefix  = trim( sprintf( __( 'By %s', 'default' ), '' ) ); // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch,WordPress.WP.I18n.MissingTranslatorsComment
 		$filtered   = array();
 
 		foreach ( $plugin_meta as $meta ) {
@@ -445,7 +446,7 @@ class Admin {
 		?>
 		<h2><?php esc_html_e( 'About', 'wc-category-donations' ); ?></h2>
 		<p>
-			<?php esc_html_e( 'WooCommerce Category Donations adds a donation percentage and a cause to each product category. The donation amount is calculated on the product price before taxes, recorded with the order, and adjusted automatically when orders are refunded or cancelled.', 'wc-category-donations' ); ?>
+			<?php esc_html_e( 'Donations by category with WooCommerce adds a donation percentage and a cause to each product category. The donation amount is calculated on the product price before taxes, recorded with the order, and adjusted automatically when orders are refunded or cancelled.', 'wc-category-donations' ); ?>
 		</p>
 		<p>
 			<?php esc_html_e( 'The Donations tab shows the recorded totals (per category, per year and overall), the list of cancelled donations, and lets you download an annual CSV report. The customer donations summary appears on the user edit screen, and the Settings tab controls the default percentage and the donation message.', 'wc-category-donations' ); ?>
@@ -524,7 +525,7 @@ class Admin {
 	 * Render the donations tab: totals per category plus the grand total.
 	 */
 	private function render_donations_tab(): void {
-		$cancelled = null !== $this->cancel_result ? $this->cancel_result : ( isset( $_GET['wccd_cancelled'] ) ? absint( $_GET['wccd_cancelled'] ) : null );
+		$cancelled = null !== $this->cancel_result ? $this->cancel_result : ( isset( $_GET['wccd_cancelled'] ) ? absint( $_GET['wccd_cancelled'] ) : null ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- notice only, absint, set by the nonce-protected action
 
 		if ( null !== $cancelled ) {
 
@@ -555,7 +556,7 @@ class Admin {
 				echo '<tr>';
 				echo '<td>' . esc_html( $row['category_name'] ) . '</td>';
 				echo '<td>' . esc_html( number_format_i18n( $row['orders'] ) ) . '</td>';
-				echo '<td>' . $this->format_amount( $row['total'] ) . '</td>';
+				echo '<td>' . wp_kses_post( $this->format_amount( $row['total'] ) ) . '</td>';
 				echo '</tr>';
 			}
 
@@ -563,7 +564,7 @@ class Admin {
 			echo '<tfoot><tr>';
 			echo '<th scope="row">' . esc_html__( 'Total', 'wc-category-donations' ) . '</th>';
 			echo '<td></td>';
-			echo '<td>' . $this->format_amount( $grand ) . '</td>';
+			echo '<td>' . wp_kses_post( $this->format_amount( $grand ) ) . '</td>';
 			echo '</tr></tfoot>';
 			echo '</table>';
 
@@ -631,7 +632,7 @@ class Admin {
 		echo '<form method="post" action="' . esc_url( admin_url( 'admin.php?page=' . self::PAGE . '&tab=donations' ) ) . '">';
 		echo '<input type="hidden" name="wccd_cancel_order_donations" value="1">';
 		wp_nonce_field( 'wccd_cancel_order_donations' );
-		echo '<p>' . get_submit_button( __( 'Remove donations from cancelled/trashed orders', 'wc-category-donations' ), 'secondary', 'submit', false ) . '</p>';
+		echo '<p>' . get_submit_button( __( 'Remove donations from cancelled/trashed orders', 'wc-category-donations' ), 'secondary', 'submit', false ) . '</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_submit_button() escapes internally
 		echo '</form>';
 
 		if ( empty( $cancelled ) ) {
@@ -653,7 +654,7 @@ class Admin {
 			echo '<tr>';
 			echo '<td>' . esc_html( '#' . $row['order_id'] ) . '</td>';
 			echo '<td>' . esc_html( $row['category_name'] ) . '</td>';
-			echo '<td>' . $this->format_amount( $row['donation_amount'] ) . '</td>';
+			echo '<td>' . wp_kses_post( $this->format_amount( $row['donation_amount'] ) ) . '</td>';
 			echo '<td>' . esc_html( $row['cancelled_reason'] ) . '</td>';
 			echo '<td>' . esc_html( $row['cancelled_at'] ) . '</td>';
 			echo '</tr>';

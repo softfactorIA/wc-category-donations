@@ -1,9 +1,9 @@
-=== WooCommerce Category Donations ===
+=== Donations by category with WooCommerce ===
 Contributors: satoko, caligari
 Tags: woocommerce, donations
 Requires at least: 6.0
 Requires Plugins: woocommerce
-Tested up to: 7.1.2
+Tested up to: 7.1
 Requires PHP: 8.2
 WC requires at least: 11.0
 WC tested up to: 11.1.2
@@ -16,7 +16,7 @@ shortcodes.
 
 == Description ==
 
-WooCommerce Category Donations is a WooCommerce companion plugin. Its
+Donations by category with WooCommerce is a WooCommerce companion plugin. Its
 settings page lets the store owner configure:
 
 * A default donation percentage applied to product categories without their
