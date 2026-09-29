@@ -2,10 +2,10 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Donations by category 1.2.0\n"
+"Project-Id-Version: SoftfactorIA Category Donations for WooCommerce 1.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wc-category-"
 "donations\n"
-"POT-Creation-Date: 2026-09-28T19:25:40+00:00\n"
+"POT-Creation-Date: 2026-09-29T15:24:13+00:00\n"
 "PO-Revision-Date: 2026-09-27 12:00:00+0000\n"
 "Last-Translator: F.Coello (satoko) & R.Couto (caligari)\n"
 "Language-Team: Spanish\n"
@@ -21,8 +21,8 @@ msgstr ""
 #: wc-category-donations.php includes/class-wc-category-donations-admin.php:43
 #: includes/class-wc-category-donations-admin.php:44
 #: includes/class-wc-category-donations-admin.php:362
-msgid "Donations by category"
-msgstr "Donations by category"
+msgid "SoftfactorIA Category Donations for WooCommerce"
+msgstr "SoftfactorIA Category Donations for WooCommerce"
 
 #. Plugin URI of the plugin
 #: wc-category-donations.php
@@ -136,15 +136,16 @@ msgstr "Github"
 
 #: includes/class-wc-category-donations-admin.php:449
 msgid ""
-"Donations by category adds a donation percentage and a cause to each product "
-"category. The donation amount is calculated on the product price before "
-"taxes, recorded with the order, and adjusted automatically when orders are "
-"refunded or cancelled."
+"SoftfactorIA Category Donations for WooCommerce adds a donation percentage "
+"and a cause to each product category. The donation amount is calculated on "
+"the product price before taxes, recorded with the order, and adjusted "
+"automatically when orders are refunded or cancelled."
 msgstr ""
-"Donations by category añade un porcentaje de donación y una causa a cada "
-"categoría de producto. El importe de la donación se calcula sobre el precio "
-"del producto antes de impuestos, se registra con el pedido y se ajusta "
-"automáticamente cuando los pedidos se reembolsan o cancelan."
+"SoftfactorIA Category Donations for WooCommerce añade un porcentaje de "
+"donación y una causa a cada categoría de producto. El importe de la donación "
+"se calcula sobre el precio del producto sin impuestos, se registra con el "
+"pedido y se ajusta automáticamente cuando los pedidos se reembolsan o "
+"cancelan."
 
 #: includes/class-wc-category-donations-admin.php:452
 msgid ""
@@ -377,7 +378,11 @@ msgid ""
 "Total donated by a user, including guest orders with the same billing email. "
 "Defaults to the currently logged-in user; pass user=\"<ID>\" for a specific "
 "registered user. Renders nothing when no user can be resolved."
-msgstr "Total donado por un usuario, incluyendo pedidos de invitado con el mismo email de facturación. Usa por defecto el usuario con la sesión iniciada; pasa user=\"<ID>\" para un usuario registrado concreto. No muestra nada cuando no se puede resolver un usuario."
+msgstr ""
+"Total donado por un usuario, incluyendo pedidos de invitado con el mismo "
+"email de facturación. Usa por defecto el usuario con la sesión iniciada; "
+"pasa user=\"<ID>\" para un usuario registrado concreto. No muestra nada "
+"cuando no se puede resolver un usuario."
 
 #: includes/class-wc-category-donations-admin.php:745
 msgid "Depends on the resolved user"
@@ -483,20 +488,18 @@ msgstr "Referencia de shortcodes (admin)"
 
 #: includes/class-wc-category-donations-shortcodes.php:246
 msgid ""
-"Donations by category: no category found. Add a category attribute or use "
-"this shortcode on a product category or product page."
+"SoftfactorIA Category Donations: no category found. Add a category attribute "
+"or use this shortcode on a product category or product page."
 msgstr ""
-"Donations by category: no se ha encontrado ninguna categoría. Añade un "
-"atributo de categoría o usa este shortcode en una página de categoría de "
-"producto o de producto."
+"SoftfactorIA Category Donations: no se ha encontrado ninguna categoría. "
+"Añade un atributo de categoría o usa este shortcode en una página de "
+"categoría o de producto."
 
 #: wc-category-donations.php:59
 msgid ""
-"Donations by category requires WooCommerce to be installed and active. The "
-"plugin is not running."
-msgstr ""
-"Donations by category requiere que WooCommerce esté instalado y activo. El "
-"plugin no está en funcionamiento."
+"SoftfactorIA Category Donations requires WooCommerce to be installed and "
+"active. The plugin is not running."
+msgstr "SoftfactorIA Category Donations requiere que WooCommerce esté instalado y activo. El plugin no se está ejecutando."
 
 #: block-donations/block.json
 msgctxt "block title"
@@ -513,6 +516,35 @@ msgstr ""
 "Bloque de demostración/diagnóstico que muestra la información de donaciones "
 "relevante para el contexto actual de la página (cualquier página, categoría, "
 "producto o carrito), además del resumen completo de donaciones."
+
+#~ msgid ""
+#~ "Donations by category requires WooCommerce to be installed and active. "
+#~ "The plugin is not running."
+#~ msgstr ""
+#~ "Donations by category requiere que WooCommerce esté instalado y activo. "
+#~ "El plugin no está en funcionamiento."
+
+#~ msgid "Donations by category"
+#~ msgstr "Donations by category"
+
+#~ msgid ""
+#~ "Donations by category adds a donation percentage and a cause to each "
+#~ "product category. The donation amount is calculated on the product price "
+#~ "before taxes, recorded with the order, and adjusted automatically when "
+#~ "orders are refunded or cancelled."
+#~ msgstr ""
+#~ "Donations by category añade un porcentaje de donación y una causa a cada "
+#~ "categoría de producto. El importe de la donación se calcula sobre el "
+#~ "precio del producto antes de impuestos, se registra con el pedido y se "
+#~ "ajusta automáticamente cuando los pedidos se reembolsan o cancelan."
+
+#~ msgid ""
+#~ "Donations by category: no category found. Add a category attribute or use "
+#~ "this shortcode on a product category or product page."
+#~ msgstr ""
+#~ "Donations by category: no se ha encontrado ninguna categoría. Añade un "
+#~ "atributo de categoría o usa este shortcode en una página de categoría de "
+#~ "producto o de producto."
 
 #~ msgid "https://example.local/wc-category-donations"
 #~ msgstr "https://example.local/wc-category-donations"

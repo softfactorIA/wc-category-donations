@@ -1,7 +1,7 @@
 <?php
 /**
- * Core bootstrap and shared API for the Donations by category
- * plugin.
+ * Core bootstrap and shared API for the SoftfactorIA Category Donations
+ * for WooCommerce plugin.
  *
  * @package WcCategoryDonations
  * @license GPL-2.0-or-later

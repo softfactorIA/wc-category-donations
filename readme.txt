@@ -1,5 +1,5 @@
-=== Donations by category ===
-Contributors: satoko, caligari
+=== SoftfactorIA Category Donations for WooCommerce ===
+Contributors: fernandocoello
 Tags: woocommerce, donations
 Requires at least: 6.0
 Requires Plugins: woocommerce
@@ -7,7 +7,7 @@ Tested up to: 7.1
 Requires PHP: 8.2
 WC requires at least: 11.0
 WC tested up to: 11.1.2
-Stable tag: 1.2.0
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,7 +16,7 @@ shortcodes.
 
 == Description ==
 
-Donations by category is a WooCommerce companion plugin. Its
+SoftfactorIA Category Donations for WooCommerce is a WooCommerce companion plugin. Its
 settings page lets the store owner configure:
 
 * A default donation percentage applied to product categories without their
@@ -136,6 +136,14 @@ Variable products without a selected variation have no price yet, so the
 shortcode renders nothing until one is chosen.
 
 == Changelog ==
+
+= 1.3.0 =
+* Renamed to "SoftfactorIA Category Donations for WooCommerce": a
+  distinctive name and permalink (`softfactoria-category-donations`)
+  replacing the generic "Donations by category" display name.
+* New plugin icon, logo and banners.
+* Translation files are no longer shipped in the package; translations
+  are served by translate.wordpress.org.
 
 = 1.2.0 =
 * New `[wccd_user_donation_total]` shortcode: the total donated by a user

@@ -40,8 +40,8 @@ class Admin {
 	 */
 	public function register_menu(): void {
 		add_menu_page(
-			__( 'Donations by category', 'wc-category-donations' ),
-			__( 'Donations by category', 'wc-category-donations' ),
+			__( 'SoftfactorIA Category Donations for WooCommerce', 'wc-category-donations' ),
+			__( 'SoftfactorIA Category Donations for WooCommerce', 'wc-category-donations' ),
 			'manage_options',
 			self::PAGE,
 			array( $this, 'render_page' ),
@@ -359,7 +359,7 @@ class Admin {
 		);
 		?>
 		<div class="wrap">
-			<h1><?php esc_html_e( 'Donations by category', 'wc-category-donations' ); ?></h1>
+			<h1><?php esc_html_e( 'SoftfactorIA Category Donations for WooCommerce', 'wc-category-donations' ); ?></h1>
 			<nav class="nav-tab-wrapper">
 				<?php foreach ( $tabs as $key => $label ) : ?>
 					<a
@@ -446,7 +446,7 @@ class Admin {
 		?>
 		<h2><?php esc_html_e( 'About', 'wc-category-donations' ); ?></h2>
 		<p>
-			<?php esc_html_e( 'Donations by category adds a donation percentage and a cause to each product category. The donation amount is calculated on the product price before taxes, recorded with the order, and adjusted automatically when orders are refunded or cancelled.', 'wc-category-donations' ); ?>
+			<?php esc_html_e( 'SoftfactorIA Category Donations for WooCommerce adds a donation percentage and a cause to each product category. The donation amount is calculated on the product price before taxes, recorded with the order, and adjusted automatically when orders are refunded or cancelled.', 'wc-category-donations' ); ?>
 		</p>
 		<p>
 			<?php esc_html_e( 'The Donations tab shows the recorded totals (per category, per year and overall), the list of cancelled donations, and lets you download an annual CSV report. The customer donations summary appears on the user edit screen, and the Settings tab controls the default percentage and the donation message.', 'wc-category-donations' ); ?>

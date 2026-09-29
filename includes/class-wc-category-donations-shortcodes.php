@@ -243,7 +243,7 @@ final class Shortcodes {
 	 * @param mixed $format_value Shortcode format attribute.
 	 */
 	private function render_category_error( $format_value ): string {
-		$message = __( 'Donations by category: no category found. Add a category attribute or use this shortcode on a product category or product page.', 'wc-category-donations' );
+		$message = __( 'SoftfactorIA Category Donations: no category found. Add a category attribute or use this shortcode on a product category or product page.', 'wc-category-donations' );
 
 		if ( ! $this->is_formatted( $format_value ) ) {
 			return $message;

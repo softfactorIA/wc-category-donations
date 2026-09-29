@@ -15,6 +15,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   dropped; the wp.org submission slug is `donations-by-category`). Code,
   textdomain and folder slug stay `wc-category-donations`.
 
+## [1.3.0] - 2026-09-29
+
+### Changed
+
+- Plugin display name is now "SoftfactorIA Category Donations for
+  WooCommerce" (WordPress.org permalink `softfactoria-category-donations`,
+  replacing the generic "Donations by category"). The technical identity is
+  unchanged: folder, main file, textdomain and code prefixes stay
+  `wc-category-donations`.
+- `readme.txt` Contributors list now contains the plugin owner's
+  WordPress.org username (`fernandocoello`) only.
+- New plugin icon (SVG), logo and WordPress.org banners.
+- Translation files (`.po`/`.mo`) are no longer shipped in the package:
+  WordPress.org serves translations through translate.wordpress.org.
+  The `languages/` folder stays in the repository as the translation
+  source (`.pot` updated).
+
 ## [1.2.0] - 2026-09-28
 
 ### Added

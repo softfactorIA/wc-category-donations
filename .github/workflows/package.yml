@@ -35,14 +35,14 @@ jobs:
           import zipfile
 
           version = sys.argv[1]
-          out = f"wc-category-donations-{version}.zip"
+          out = f"softfactoria-category-donations-{version}.zip"
           with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as zf:
               for root, dirs, files in os.walk("."):
-                  dirs[:] = [d for d in dirs if not d.startswith(".") and d != "assets"]
+                  dirs[:] = [d for d in dirs if not d.startswith(".") and d not in ("assets", "languages")]
                   files = [f for f in files if not f.startswith(".") and f != out]
                   for name in files:
                       full = os.path.join(root, name)
-                      rel = os.path.join("wc-category-donations", os.path.relpath(full, "."))
+                      rel = os.path.join("softfactoria-category-donations", os.path.relpath(full, "."))
                       zf.write(full, rel)
           print(f"Created {out}")
           PY
@@ -50,8 +50,8 @@ jobs:
       - name: Upload zip as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: wc-category-donations-${{ steps.version.outputs.version }}.zip
-          path: wc-category-donations-${{ steps.version.outputs.version }}.zip
+          name: softfactoria-category-donations-${{ steps.version.outputs.version }}.zip
+          path: softfactoria-category-donations-${{ steps.version.outputs.version }}.zip
 
       - name: Extract release notes from changelog
         id: notes
@@ -74,12 +74,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "$GITHUB_REF_NAME" "wc-category-donations-${{ steps.version.outputs.version }}.zip" \
+          gh release create "$GITHUB_REF_NAME" "softfactoria-category-donations-${{ steps.version.outputs.version }}.zip" \
             --title "Release ${GITHUB_REF_NAME}" \
             --notes-file "${{ steps.notes.outputs.notes-file }}"
 
       - name: Prepare checkout for WordPress.org deploy
-        run: rm -rf .github
+        run: rm -rf .github languages
 
       - name: Deploy to WordPress.org SVN
         if: ${{ secrets.WP_ORG_USERNAME != '' && secrets.WP_ORG_PASSWORD != '' }}
@@ -87,4 +87,4 @@ jobs:
         env:
           SVN_USERNAME: ${{ secrets.WP_ORG_USERNAME }}
           SVN_PASSWORD: ${{ secrets.WP_ORG_PASSWORD }}
-          SLUG: donations-by-category
+          SLUG: softfactoria-category-donations
